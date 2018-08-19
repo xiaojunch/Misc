@@ -31,11 +31,8 @@ def sendEmail():
 
 def checkUpdate():
     page = requests.get('http://book.zongheng.com/book/672340.html')
-    
     soup = BeautifulSoup(page.content,"lxml")
-    
     update = soup.find("div",{"class":"uptime"})
-    
     updateTime = update.find('br').previous_sibling
     
     updateCase1 = re.match(r'\s*·(\d*)分钟前',updateTime)
