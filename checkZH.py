@@ -5,9 +5,6 @@ from bs4 import BeautifulSoup
 import datetime
 import time
 
-os.environ['http_proxy'] = "http://webproxy.itginc.com:8080"
-os.environ['https_proxy'] = "https://webproxy.itginc.com:8080"
-
 def sendEmail():
     # Import smtplib for the actual sending function
     import smtplib
@@ -22,11 +19,11 @@ def sendEmail():
     # me == the sender's email address
     # you == the recipient's email address
     msg['Subject'] = 'ZH just updated'
-    msg['From'] = 'xiaojun.chen@itg.com'
-    msg['To'] = 'xiaojun.chen@itg.com'
+    msg['From'] = 'xiaojunch@gmail.com'
+    msg['To'] = 'xiaojunch@gmail.com'
     
     # Send the message via our own SMTP server.
-    s = smtplib.SMTP('mailhub.itginc.com')
+    s = smtplib.SMTP('mail.google.com')
     s.send_message(msg)
     s.quit()
 
